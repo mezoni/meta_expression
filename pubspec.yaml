@@ -1,0 +1,21 @@
+name: meta_expression
+description: A meta-expression is a code generator-based metaprogramming feature that uses function notation to denote a meta-expression.
+publish_to: none
+version: 0.1.0
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+dependencies:
+  _fe_analyzer_shared: any
+  analyzer: any
+  dart_style: any
+  logging: any
+  meta_expression_annotation: ^0.1.0
+  path: any
+  source_gen: any
+  source_helper: any
+  source_span: any
+  tuple: any
+dev_dependencies:
+  dart_parser_helper: ^0.1.0
+  lints: ^2.0.0
+  test: ^1.21.4

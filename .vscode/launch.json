@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "build_test_template.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "tool/build_test_template.dart"
+        },
+        {
+            "name": "test_meta_expression_transformer.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "test/test_meta_expression_transformer.dart"
+        }
+    ]
+}
