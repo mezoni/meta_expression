@@ -9,9 +9,12 @@ class DeclaredNameCollector {
 
   Set<String> collect() {
     final result = <String>{};
+    _collect(_scope, result);
+    /*
     for (final child in _scope.children) {
       _collect(child, result);
     }
+    */
 
     return result;
   }

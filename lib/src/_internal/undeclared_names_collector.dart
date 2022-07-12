@@ -14,9 +14,12 @@ class UndeclaredNamesCollector {
   Set<String> collect() {
     _declarations = {};
     _identifiers = {};
+    _collect(_scope);
+    /*
     for (final child in _scope.children) {
       _collect(child);
     }
+    */
 
     _identifiers.removeWhere(_declarations.contains);
     final result = _identifiers.toSet();

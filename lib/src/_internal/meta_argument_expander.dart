@@ -33,9 +33,12 @@ class MetaAgrumentExpander {
     final names = _arguments.keys.toSet();
     final node = _parseSource();
     final scope = _analyzeSource(node);
+    _transform(scope, names);
+    /*
     for (final child in scope.children) {
       _transform(child, names);
     }
+    */
 
     final result = _applyPatches();
     return result;
@@ -58,7 +61,8 @@ class MetaAgrumentExpander {
     for (final identifier in identifiers) {
       var source = _capturedContext[name]!;
       final parent = identifier.parent;
-      if (parent is MethodInvocation) {
+      if (parent is MethodInvocation ||
+          parent is FunctionExpressionInvocation) {
         final expression = _arguments[name]!;
         if (expression is FunctionExpression) {
           final body = expression.body;

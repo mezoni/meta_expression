@@ -32,9 +32,12 @@ class ConflictingNameRenamer {
     final node = _parseSource();
     final scope = _analyzeSource(node);
     final newNames = _generateUniqueNames(scope);
+    _rename(scope, newNames, {});
+    /*
     for (final child in scope.children) {
       _rename(child, newNames, {});
     }
+    */
 
     final result = _apllyPatches();
     return result;
