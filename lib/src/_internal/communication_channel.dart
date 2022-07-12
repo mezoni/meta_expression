@@ -7,8 +7,7 @@ import 'package:logging/logging.dart';
 import 'package:path/path.dart' as path;
 
 class CommunicationChannel {
-  static const _template =
-      r'''
+  static const _template = r'''
 import 'dart:convert';
 import 'dart:isolate';
 

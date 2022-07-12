@@ -17,8 +17,7 @@ void main() {
 void _testArgumentExpansion() {
   test('Test argument expansion', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   var l1 = 0;
   var l2 = l1;
@@ -30,8 +29,7 @@ void _testArgumentExpansion() {
     p1(1);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   var l1$ = 0;
   var l2$ = l1$;
@@ -55,8 +53,7 @@ void _testArgumentExpansion() {
     }
 
     {
-      const source =
-          '''
+      const source = '''
 (State<I> state) {
   final pos = state.pos;
   final r1 = _ws(state);
@@ -71,8 +68,7 @@ void _testArgumentExpansion() {
     state.pos = pos;
   }
 }(state)''';
-      const source2 =
-          r'''
+      const source2 = r'''
 (State<I> state) {
   final pos = state.pos;
   final r1 = _ws(state);
@@ -92,8 +88,7 @@ void _testArgumentExpansion() {
   }
 }(state)''';
       final arguments = {
-        'after': parseExpression(
-            '''
+        'after': parseExpression('''
 (State<String> state) {
   if (state.pos >= state.source.length) {
     return const Res(null as dynamic);
@@ -113,8 +108,7 @@ void _testArgumentExpansion() {
 void _testFor() {
   test('Test for statement', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   for (var l1 = 0, l2 = 1; l1 < l2; l1++, l2--) {
     l1 = l2;
@@ -122,8 +116,7 @@ void _testFor() {
     p2(2);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   for (var l1$ = 0, l2$ = 1; l1$ < l2$; l1$++, l2$--) {
     l1$ = l2$;
@@ -148,8 +141,7 @@ void _testFor() {
 void _testForEach() {
   test('Test for each statement', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   for (var l1 in l2) {
     l1 = l2;
@@ -157,8 +149,7 @@ void _testForEach() {
     p2(2);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   for (var l1$ in l2) {
     l1$ = l2;
@@ -178,8 +169,7 @@ void _testForEach() {
       expect(result.compact, source2.compact);
     }
     {
-      const source =
-          '''
+      const source = '''
 () {
   fimal l2 = 0;
   for (var l1 in l2) {
@@ -188,8 +178,7 @@ void _testForEach() {
     p2(2);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   fimal l2$ = 0;
   for (var l1$ in l2$) {
@@ -215,8 +204,7 @@ void _testForEach() {
 void _testFunctionDeclaration() {
   test('Test function declaration', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   l1(int l2) {
     l1 = l2;
@@ -227,8 +215,7 @@ void _testFunctionDeclaration() {
   p1(1);
   p2(2);
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   l1$(int l2$) {
     l1$ = l2$;
@@ -280,8 +267,7 @@ void _testFunctionExpressionInvoction() {
 void _testInnerScope() {
   test('Test inner scope', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   var l1 = 0;
   l2() {
@@ -290,8 +276,7 @@ void _testInnerScope() {
     p2(2);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   var l1$ = 0;
   l2$() {
@@ -313,8 +298,7 @@ void _testInnerScope() {
     }
 
     {
-      const source =
-          '''
+      const source = '''
 () {
   l1 = 0;
   l2() {
@@ -324,8 +308,7 @@ void _testInnerScope() {
     }
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   l1 = 0;
   l2$() {
@@ -352,8 +335,7 @@ void _testInnerScope() {
 void _testSwitch() {
   test('Test switch statement', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   var l1 = 0;
   var l2 = 1;
@@ -364,8 +346,7 @@ void _testSwitch() {
       break;
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   var l1$ = 0;
   var l2$ = 1;
@@ -393,8 +374,7 @@ void _testSwitch() {
 void _testTry() {
   test('Test try statement', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   try {
     var l1 = 0;
@@ -403,8 +383,7 @@ void _testTry() {
     p2(2);
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   try {
     var l1$ = 0;
@@ -430,8 +409,7 @@ void _testTry() {
 void _testTypeArgumentExpansion() {
   test('Test type argument expansion', () {
     {
-      const source =
-          '''
+      const source = '''
 () {
   var l1 = <O>[];
   var l2 = <T>[];
@@ -441,8 +419,7 @@ void _testTypeArgumentExpansion() {
     var l5 = <T>[];
   }
 }''';
-      const source2 =
-          r'''
+      const source2 = r'''
 () {
   var l1 = <X>[];
   var l2 = <Foo<baz>>[];

@@ -1,7 +1,7 @@
 name: meta_expression
 description: A meta-expression is a code generator-based metaprogramming feature that uses function notation to denote a meta-expression.
 repository:  https://github.com/mezoni/meta_expression
-version: 0.1.0
+version: 0.1.1
 environment:
   sdk: '>=2.17.0 <3.0.0'
 dependencies:
